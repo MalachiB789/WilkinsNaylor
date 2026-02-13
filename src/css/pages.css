@@ -487,3 +487,39 @@ input:focus, textarea:focus, select:focus{
     margin-top: -34px;
   }
 }
+
+/* Blog Page Layout */
+.blog-featured {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.blog-featured h3 {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.blog-featured p {
+  font-size: 1.125rem;
+  max-width: 65ch;
+  margin: 0;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .blog-featured {
+    padding: 24px;
+  }
+  .blog-featured h3 {
+    font-size: 1.5rem;
+  }
+}

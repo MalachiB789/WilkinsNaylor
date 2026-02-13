@@ -60,14 +60,7 @@
   position: relative;
 }
 .nav-dropdown-toggle{
-  font: inherit;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-.nav-dropdown-toggle:disabled{
-  opacity: 1;
-  color: var(--primary);
+  display: inline-block;
   cursor: default;
 }
 .nav-dropdown-menu{
