@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Oakstone Homes</title>
-  <meta name="description" content="Contact Oakstone Homes for enquiries, quotes, and project discussions." />
+
+  <title>Contact | Naylor Homes</title>
+  <meta
+    name="description"
+    content="Contact Naylor Homes for property enquiries across Yorkshire and Lancashire."
+  />
 
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/components.css" />
@@ -17,34 +21,42 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <p class="kicker">Contact</p>
-        <h1>Send an enquiry.</h1>
+        <p class="kicker"><span class="hero-badge">Contact</span></p>
+        <h1>Send an enquiry</h1>
         <p class="lead">
-          Tell us what you need and where the property is. We’ll respond within 48 hours.
+          Tell us what you are looking for and we will respond as quickly as possible.
         </p>
       </div>
     </section>
+    <div class="section-divider" aria-hidden="true"></div>
 
     <section class="section">
       <div class="container split">
-        <div class="panel">
+        <article class="panel">
           <h2>Contact form</h2>
-          <p class="muted">This is a simple static form layout. You can wire it to Formspree/Netlify later.</p>
+          <p class="muted">
+            Share a few details and we will come back to you with the right next steps.
+          </p>
 
           <form class="form" action="#" method="post">
             <label class="field">
               <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required />
+              <input type="text" name="name" autocomplete="name" placeholder="Your full name" required />
             </label>
 
             <label class="field">
               <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required />
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
             </label>
 
             <label class="field">
-              <span>Property area</span>
-              <input type="text" name="area" placeholder="e.g. Birmingham" />
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+44..." />
+            </label>
+
+            <label class="field">
+              <span>Area</span>
+              <input type="text" name="area" placeholder="Town or city" />
             </label>
 
             <label class="field">
@@ -52,42 +64,43 @@
               <textarea name="message" rows="6" placeholder="Tell us what you need..." required></textarea>
             </label>
 
-            <div class="row">
+            <div class="hero-actions">
               <button class="btn" type="submit">Send message</button>
               <a class="btn-outline" href="mailto:hello@yourdomain.co.uk">Email instead</a>
             </div>
           </form>
-        </div>
+        </article>
 
-        <div class="panel panel-soft">
-          <h2>Details</h2>
+        <aside class="panel panel-soft">
+          <h2>Contact details</h2>
+          <p class="muted">You can also reach us directly using the details below.</p>
+
           <div class="contact-list">
-            <div class="contact-item">
+            <div>
               <div class="contact-label">Email</div>
               <a class="text-link" href="mailto:hello@yourdomain.co.uk">hello@yourdomain.co.uk</a>
             </div>
 
-            <div class="contact-item">
+            <div>
               <div class="contact-label">Phone</div>
               <a class="text-link" href="tel:+441234567890">+44 1234 567 890</a>
             </div>
 
-            <div class="contact-item">
+            <div>
               <div class="contact-label">Hours</div>
-              <div class="muted">Mon–Fri • 9am–6pm</div>
+              <p class="muted">Mon-Fri, 9:00am-6:00pm</p>
             </div>
 
-            <div class="contact-item">
-              <div class="contact-label">Service area</div>
-              <div class="muted">Add your area(s) here</div>
+            <div>
+              <div class="contact-label">Coverage</div>
+              <p class="muted">Yorkshire and Lancashire</p>
             </div>
           </div>
 
           <div class="note">
-            <strong>Tip:</strong>
-            Add a short line about what information helps you quote faster (photos, address, timeline, budget range).
+            Include your preferred area and the type of property you are interested in so we can reply faster.
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>

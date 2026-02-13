@@ -14,12 +14,14 @@
   --shadow: 0 10px 25px rgba(26, 43, 69, 0.08);
 
   --container: 1120px;
+  --header-offset: 84px;
 }
 
 *{ box-sizing: border-box; }
 html,body{ height: 100%; }
 body{
   margin: 0;
+  padding-top: var(--header-offset);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   line-height: 1.7;
   color: var(--text);
