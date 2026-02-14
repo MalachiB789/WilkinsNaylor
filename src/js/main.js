@@ -14,9 +14,10 @@ async function injectHtmlInclude(targetElementId, includeFilePath) {
  */
 function highlightCurrentNavLink() {
   const currentFileName = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const normalizedFileName = currentFileName.startsWith("blog-") ? "blog.html" : currentFileName;
   document.querySelectorAll(".nav-link").forEach((navLink) => {
     const href = (navLink.getAttribute("href") || "").toLowerCase();
-    if (href.endsWith(currentFileName)) navLink.classList.add("is-active");
+    if (href.endsWith(normalizedFileName)) navLink.classList.add("is-active");
   });
 }
 

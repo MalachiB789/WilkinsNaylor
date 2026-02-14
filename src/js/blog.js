@@ -1,10 +1,14 @@
+function getBlogPostUrl(slug) {
+  return `./blog-${encodeURIComponent(slug)}.html`;
+}
+
 function createBlogCardMarkup(post) {
   return `
     <article class="service-card">
       <p class="blog-card-meta">${post.dateLabel} · ${post.category} · ${post.readTime}</p>
       <h3>${post.title}</h3>
       <p class="muted">${post.excerpt}</p>
-      <p style="margin-top: 10px;"><a class="text-link" href="./blog.html">Read post</a></p>
+      <p style="margin-top: 10px;"><a class="text-link" href="${getBlogPostUrl(post.slug)}">Read post</a></p>
     </article>
   `;
 }
@@ -34,7 +38,7 @@ function renderBlogArchivePage() {
       <p class="blog-card-meta">${latestPost.dateLabel} · ${latestPost.category} · ${latestPost.readTime}</p>
       <h3>${latestPost.title}</h3>
       <p class="muted">${latestPost.excerpt}</p>
-      <a class="btn" href="./blog.html">Read article</a>
+      <a class="btn" href="${getBlogPostUrl(latestPost.slug)}">Read article</a>
     </article>
   `;
 
