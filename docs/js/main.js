@@ -221,26 +221,31 @@ function initializeReviewsCarousel() {
  * Opens/closes a lightweight modal review form.
  */
 function initializeReviewModal() {
-  const modalElement = document.querySelector("[data-review-modal]");
-  const openButton = document.querySelector("[data-review-modal-open]");
-  if (!modalElement || !openButton) return;
+  const modalElements = document.querySelectorAll("[data-review-modal]");
+  const openButtons = document.querySelectorAll("[data-review-modal-open]");
+  if (!modalElements.length || !openButtons.length) return;
 
-  const closeButtons = modalElement.querySelectorAll("[data-review-modal-close]");
+  modalElements.forEach((modalElement, index) => {
+    const openButton = openButtons[index];
+    if (!openButton) return;
 
-  const openModal = () => {
-    modalElement.hidden = false;
-    document.body.style.overflow = "hidden";
-  };
+    const closeButtons = modalElement.querySelectorAll("[data-review-modal-close]");
 
-  const closeModal = () => {
-    modalElement.hidden = true;
-    document.body.style.overflow = "";
-  };
+    const openModal = () => {
+      modalElement.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
 
-  openButton.addEventListener("click", openModal);
-  closeButtons.forEach((button) => button.addEventListener("click", closeModal));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modalElement.hidden) closeModal();
+    const closeModal = () => {
+      modalElement.hidden = true;
+      document.body.style.overflow = "";
+    };
+
+    openButton.addEventListener("click", openModal);
+    closeButtons.forEach((button) => button.addEventListener("click", closeModal));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modalElement.hidden) closeModal();
+    });
   });
 }
 

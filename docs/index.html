@@ -243,7 +243,63 @@
       </div>
 
       <div class="container review-cta-wrap">
-        <a class="btn" href="./contact/">Contact Us</a>
+        <button class="btn review-open-btn" type="button" data-review-modal-open>
+          Leave a review
+        </button>
+      </div>
+
+      <div class="review-modal" data-review-modal hidden>
+        <div class="review-modal-backdrop" data-review-modal-close></div>
+        <div class="review-modal-panel panel" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+          <button class="review-modal-close" type="button" aria-label="Close review form" data-review-modal-close>&times;</button>
+
+          <h3 id="review-modal-title">Leave a review</h3>
+
+          <form
+            class="form"
+            action="https://formsubmit.co/ajax/info@wilkinsnaylor.co.uk"
+            method="post"
+            data-remote-form
+            data-form-endpoint="https://formsubmit.co/ajax/info@wilkinsnaylor.co.uk"
+            data-success-message="Review sent!"
+            data-error-message="Review failed to send. Please try again."
+          >
+            <input type="hidden" name="_subject" value="Homepage Review" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+
+            <label class="field">
+              <span>Rating</span>
+              <select name="rating" required>
+                <option value="">Select</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Average</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Your review</span>
+              <textarea name="review" rows="6" placeholder="Share your experience..." required></textarea>
+            </label>
+
+            <div class="hero-actions">
+              <button class="btn" type="submit">Submit review</button>
+            </div>
+            <p class="muted" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
